@@ -1,3 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<header th:fragment="fragment-header">
+    <div th:if="${role == 'GUEST'}"
+         th:insert="fragments/header.html::fragment-header-guest">
+    </div>
+    <div th:if="${role != 'GUEST'}"
+         th:insert="fragments/header.html::fragment-header-user">
+    </div>
+</header>
+
+<div th:fragment="fragment-header-guest" th:align="right">
+    <button>로그인</button>
+    <button>회원가입</button>
+</div>
+
+<div th:fragment="fragment-header-user" th:align="right">
+    <button>로그아웃</button>
+</div>
+
 </html>
