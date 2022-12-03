@@ -9,11 +9,14 @@
     <div th:if="${role != 'GUEST'}"
          th:insert="fragments/header.html::fragment-header-user">
     </div>
+
+    <div th:insert="fragments/header.html::fragment-header-guest">
+    </div>
 </header>
 
 <div th:fragment="fragment-header-guest" th:align="right">
     <button>로그인</button>
-    <button>회원가입</button>
+    <button onclick="location.href='/register'">회원가입</button>
 </div>
 
 <div th:fragment="fragment-header-user" th:align="right">
