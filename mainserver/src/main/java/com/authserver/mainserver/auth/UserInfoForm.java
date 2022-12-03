@@ -1,13 +1,13 @@
-package com.authserver.mainserver.register;
+package com.authserver.mainserver.auth;
 
 import lombok.Getter;
 
 @Getter
-public class RegisterForm {
+public class UserInfoForm {
     private String username;
     private String password;
 
-    public RegisterForm(String username, String password) {
+    public UserInfoForm(String username, String password) {
         this.username = username;
         this.password = password;
     }

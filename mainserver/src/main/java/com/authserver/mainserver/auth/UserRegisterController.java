@@ -1,4 +1,4 @@
-package com.authserver.mainserver.register;
+package com.authserver.mainserver.auth;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,7 @@ public class UserRegisterController {
     }
 
     @PostMapping("/register")
-    public String registerPost(RegisterForm form) {
+    public String registerPost(UserInfoForm form) {
         log.info(form.getUsername());
         log.info(form.getPassword());
 
