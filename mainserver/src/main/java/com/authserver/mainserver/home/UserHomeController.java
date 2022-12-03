@@ -1,4 +1,4 @@
-package com.authserver.mainserver;
+package com.authserver.mainserver.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
