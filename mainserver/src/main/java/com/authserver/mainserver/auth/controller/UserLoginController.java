@@ -16,7 +16,7 @@ public class UserLoginController {
 
     @PostMapping("/login")
     public String loginPost(UserInfoForm form) {
-        log.info(form.getUsername());
+        log.info(form.getEmail());
         log.info(form.getPassword());
 
         return "redirect:/";
