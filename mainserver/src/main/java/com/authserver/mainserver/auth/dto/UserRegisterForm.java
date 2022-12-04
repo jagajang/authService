@@ -9,11 +9,11 @@ public class UserRegisterForm extends UserInfoForm {
     private String nickname;
 
     public UserRegisterForm(
-            String username,
+            String email,
             String password,
             UserRole role,
             String nickname) {
-        super(username, password);
+        super(email, password);
         this.role = role;
         this.nickname = nickname;
     }

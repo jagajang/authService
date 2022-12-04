@@ -4,11 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class UserInfoForm {
-    private String username;
+    private String email;
     private String password;
 
-    public UserInfoForm(String username, String password) {
-        this.username = username;
+    public UserInfoForm(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 }
