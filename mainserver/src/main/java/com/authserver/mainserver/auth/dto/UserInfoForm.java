@@ -1,4 +1,4 @@
-package com.authserver.mainserver.auth;
+package com.authserver.mainserver.auth.dto;
 
 import lombok.Getter;
 
