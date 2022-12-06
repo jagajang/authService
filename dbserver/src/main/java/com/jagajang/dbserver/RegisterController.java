@@ -3,6 +3,7 @@ package com.jagajang.dbserver;
 import com.jagajang.dbserver.dto.UserInfo;
 import com.jagajang.dbserver.dto.UserRegister;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class RegisterController {
     @PostMapping("/register")
     public Boolean registerUser(UserRegister registerInfo) {
-        registerInfo
-
+        log.info(registerInfo.getEmail());
+        log.info(registerInfo.getPassword());
+        log.info(registerInfo.getNickname());
         return false;
     }
 
