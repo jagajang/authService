@@ -19,11 +19,11 @@ import java.util.concurrent.TimeUnit;
 @Service
 @Slf4j
 public class DBWebClientServiceImpl implements DBWebClientService {
-    private final String domain = "http://localhost:8082";
-
-    private WebClient dbWebClient;
+    private final WebClient dbWebClient;
 
     DBWebClientServiceImpl() {
+        String domain = "http://localhost:8082";
+
         HttpClient httpClient = HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 2000)
                 .responseTimeout(Duration.ofMillis(2000))
@@ -51,7 +51,7 @@ public class DBWebClientServiceImpl implements DBWebClientService {
     }
 
     @Override
-    public boolean registerUser(UserRegisterForm form) {
+    public Boolean registerUser(UserRegisterForm form) {
         String uri = "/register";
 
         return dbWebClient.post()
