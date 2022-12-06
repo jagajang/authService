@@ -10,7 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.netty.http.client.HttpClient;
 
@@ -22,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class DBWebClientServiceImpl implements DBWebClientService {
     private final String domain = "http://localhost:8082";
 
-    private WebClient webClient;
+    private WebClient dbWebClient;
 
     DBWebClientServiceImpl() {
         HttpClient httpClient = HttpClient.create()
@@ -33,7 +32,7 @@ public class DBWebClientServiceImpl implements DBWebClientService {
                         .addHandlerLast(new WriteTimeoutHandler(2000, TimeUnit.MILLISECONDS))
                 );
 
-        webClient = WebClient.builder()
+        dbWebClient = WebClient.builder()
                 .clientConnector(new ReactorClientHttpConnector(httpClient))
                 .baseUrl(domain)
                 .defaultCookie("key", "value")
@@ -42,8 +41,10 @@ public class DBWebClientServiceImpl implements DBWebClientService {
     }
 
     public String apiTest() {
-        return webClient.get()
-                .uri("/api-test")
+        String uri = "/api-test";
+
+        return dbWebClient.get()
+                .uri(uri)
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
@@ -51,14 +52,13 @@ public class DBWebClientServiceImpl implements DBWebClientService {
 
     @Override
     public boolean registerUser(UserRegisterForm form) {
-        String uri = "/adduser";
+        String uri = "/register";
 
-        webClient.post()
+        return dbWebClient.post()
                 .uri(uri)
-                .body(Mono.just("Hello World"), String.class)
+                .body(form, UserRegisterForm.class)
                 .retrieve()
-                .bodyToFlux(String.class);
-
-        return false;
+                .bodyToMono(Boolean.class)
+                .block();
     }
 }
