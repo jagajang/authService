@@ -9,8 +9,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 import reactor.netty.http.client.HttpClient;
 
 import java.time.Duration;
@@ -54,9 +54,14 @@ public class DBWebClientServiceImpl implements DBWebClientService {
     public Boolean registerUser(UserRegisterForm form) {
         String uri = "/register";
 
+        log.info(form.getEmail());
+
         return dbWebClient.post()
                 .uri(uri)
-                .body(form, UserRegisterForm.class)
+                .body(BodyInserters
+                        .fromFormData("email", form.getEmail())
+                        .with("password", form.getPassword())
+                        .with("nickname", form.getNickname()))
                 .retrieve()
                 .bodyToMono(Boolean.class)
                 .block();
