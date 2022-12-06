@@ -8,11 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class RegisterServiceImpl implements RegisterService {
     @Autowired
-    private DBWebClientService dbRestTemplateService;
+    private DBWebClientService dbWebClientService;
 
     @Override
     public void register(UserRegisterForm form) throws Exception {
-        String domain = "http://localhost:8081";
-        String path = "/";
+        dbWebClientService.registerUser(form);
     }
 }
