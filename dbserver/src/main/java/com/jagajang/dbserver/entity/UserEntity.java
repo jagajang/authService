@@ -3,6 +3,8 @@ package com.jagajang.dbserver.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
+
 @Entity
 @Getter
 @Table(name = "users", indexes = {
@@ -34,6 +36,10 @@ public class UserEntity {
 
     @Column(nullable = false, length = 20)
     private String nickname;
+
+    @Column
+    @Setter
+    private Timestamp lastLogin;
 
     @Builder
     public UserEntity(
