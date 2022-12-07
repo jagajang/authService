@@ -1,12 +1,12 @@
-package com.authserver.mainserver.auth.dto;
+package com.authserver.mainserver.type.dto;
 
 import lombok.Getter;
 
 @Getter
-public class UserRegisterForm extends UserInfoForm {
+public class UserInfoNameForm extends UserInfoForm {
     private String nickname;
 
-    public UserRegisterForm(
+    public UserInfoNameForm(
             String email,
             String password,
             String nickname) {

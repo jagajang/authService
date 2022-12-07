@@ -1,7 +1,7 @@
 package com.authserver.mainserver.auth.service;
 
 import com.authserver.mainserver.api.db.DBWebClientService;
-import com.authserver.mainserver.auth.dto.UserRegisterForm;
+import com.authserver.mainserver.type.dto.UserInfoNameForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ public class RegisterServiceImpl implements RegisterService {
     private DBWebClientService dbWebClientService;
 
     @Override
-    public void register(UserRegisterForm form) throws Exception {
+    public void register(UserInfoNameForm form) throws Exception {
         dbWebClientService.registerUser(form);
     }
 }

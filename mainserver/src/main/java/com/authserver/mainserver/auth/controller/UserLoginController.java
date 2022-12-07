@@ -1,6 +1,6 @@
 package com.authserver.mainserver.auth.controller;
 
-import com.authserver.mainserver.auth.dto.UserInfoForm;
+import com.authserver.mainserver.type.dto.UserInfoForm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
 package com.authserver.mainserver.api.db;
 
-import com.authserver.mainserver.auth.dto.UserRegisterForm;
+import com.authserver.mainserver.type.dto.UserInfoNameForm;
 
 public interface DBWebClientService {
-    Boolean registerUser(UserRegisterForm form);
+    Boolean registerUser(UserInfoNameForm form);
 }

@@ -1,6 +1,6 @@
 package com.authserver.mainserver.api.db;
 
-import com.authserver.mainserver.auth.dto.UserRegisterForm;
+import com.authserver.mainserver.type.dto.UserInfoNameForm;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
@@ -51,7 +51,7 @@ public class DBWebClientServiceImpl implements DBWebClientService {
     }
 
     @Override
-    public Boolean registerUser(UserRegisterForm form) {
+    public Boolean registerUser(UserInfoNameForm form) {
         String uri = "/register";
 
         log.info(form.getEmail());

@@ -1,7 +1,7 @@
 package com.authserver.mainserver.auth.service;
 
-import com.authserver.mainserver.auth.dto.UserRegisterForm;
+import com.authserver.mainserver.type.dto.UserInfoNameForm;
 
 public interface RegisterService {
-    void register(UserRegisterForm form) throws Exception;
+    void register(UserInfoNameForm form) throws Exception;
 }
