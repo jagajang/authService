@@ -3,11 +3,11 @@ package com.jagajang.dbserver.type.dto;
 import lombok.Getter;
 
 @Getter
-public class UserInfo {
+public class UserMailPass {
     private String email;
     private String password;
 
-    UserInfo(String email, String password) {
+    UserMailPass(String email, String password) {
         this.email = email;
         this.password = password;
     }

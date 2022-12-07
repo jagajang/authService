@@ -3,10 +3,10 @@ package com.jagajang.dbserver.type.dto;
 import lombok.Getter;
 
 @Getter
-public class UserInfoName extends UserInfo {
+public class UserMailPassName extends UserMailPass {
     private String nickname;
 
-    public UserInfoName(
+    public UserMailPassName(
             String email,
             String password,
             String nickname) {

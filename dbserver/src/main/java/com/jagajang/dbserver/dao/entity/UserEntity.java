@@ -1,6 +1,6 @@
 package com.jagajang.dbserver.dao.entity;
 
-import com.jagajang.dbserver.type.dto.UserInfoName;
+import com.jagajang.dbserver.type.dto.UserMailPassName;
 import com.jagajang.dbserver.type.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
@@ -43,7 +43,7 @@ public class UserEntity {
     @Setter
     private Timestamp lastLogin;
 
-    public UserEntity(UserInfoName userInfoName) {
+    public UserEntity(UserMailPassName userInfoName) {
         this.email = userInfoName.getEmail();
         this.password = userInfoName.getPassword();
         this.role = UserRole.USER;

@@ -1,7 +1,7 @@
 package com.jagajang.dbserver.Controller;
 
 import com.jagajang.dbserver.DBService;
-import com.jagajang.dbserver.type.dto.UserInfoName;
+import com.jagajang.dbserver.type.dto.UserMailPassName;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ public class GuestUserController {
     private DBService dbService;
 
     @PostMapping("/register")
-    public Boolean registerUser(UserInfoName registerInfo) {
+    public Boolean registerUser(UserMailPassName registerInfo) {
         return dbService.registerUser(registerInfo);
     }
 }
