@@ -3,9 +3,13 @@ package com.jagajang.dbserver;
 import com.jagajang.dbserver.dao.UserRepository;
 import com.jagajang.dbserver.dao.entity.UserEntity;
 import com.jagajang.dbserver.type.dto.UserMailPassName;
+import com.jagajang.dbserver.type.dto.UserResponseInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -21,7 +25,15 @@ public class DBService {
         return true;
     }
 
-    public Boolean findUserByNickname(String userName) {
-        return false;
+    public List<UserResponseInfo> findUsersByNickname(String userName) {
+        return userRepository
+                .findAllByNickname(userName).stream()
+                .map(userEntity ->
+                        UserResponseInfo.builder()
+                                .email(userEntity.getEmail())
+                                .nickname(userEntity.getNickname())
+                                .lastLogin(userEntity.getLastLogin())
+                                .build()
+                ).toList();
     }
 }

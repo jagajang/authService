@@ -32,17 +32,20 @@ public class TestController {
     public String dbInsertTest() {
         log.info("insert test");
 
-        return dbService.registerUser(
-                new UserMailPassName(
+        if(dbService.registerUser(new UserMailPassName(
                         "email",
                         "pass",
-                        "name")).toString();
+                        "name")))
+            return "insert success";
+        return "insert fail";
     }
 
     @GetMapping("/select-all")
     public String dbSelectTest() {
         log.info("select test");
 
-        return "";
+        return String.format(
+                "there are %d users with nickname=name ",
+                dbService.findUsersByNickname("name").size());
     }
 }

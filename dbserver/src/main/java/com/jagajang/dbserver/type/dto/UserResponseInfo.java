@@ -1,5 +1,6 @@
 package com.jagajang.dbserver.type.dto;
 
+import com.jagajang.dbserver.dao.entity.UserEntity;
 import com.jagajang.dbserver.type.enums.UserRole;
 import lombok.Builder;
 import lombok.Getter;

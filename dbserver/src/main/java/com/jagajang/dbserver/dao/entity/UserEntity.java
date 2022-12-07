@@ -9,7 +9,6 @@ import java.sql.Timestamp;
 
 @Entity
 @Getter
-@Builder
 @Table(name = "user", indexes = {
         @Index(name = "idx_email", columnList = "email"),
         @Index(name = "idx_role_email", columnList = "role, email"),
@@ -47,13 +46,23 @@ public class UserEntity {
     public UserEntity(UserMailPassName userInfoName) {
         this.email = userInfoName.getEmail();
         this.password = userInfoName.getPassword();
-        this.role = UserRole.USER;
         this.nickname = userInfoName.getNickname();
+
+        this.role = UserRole.USER;
         this.lastLogin = null;
     }
 
-    @Override
-    public String toString() {
-        return String.format("");
+    @Builder
+    public UserEntity(
+            String email,
+            String password,
+            UserRole role,
+            String nickname) {
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.nickname = nickname;
+
+        this.lastLogin = null;
     }
 }
