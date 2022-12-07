@@ -1,4 +1,4 @@
-package com.authserver.mainserver.auth.controller;
+package com.authserver.mainserver.auth;
 
 import com.authserver.mainserver.type.dto.UserInfoForm;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.authserver.mainserver.auth.controller;
+package com.authserver.mainserver.api;
 
 import com.authserver.mainserver.api.db.DBWebClientServiceImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-public class ApiTest {
+public class ApiTestController {
     @Autowired
     DBWebClientServiceImpl dbWebClientService;
 

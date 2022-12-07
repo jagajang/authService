@@ -1,7 +1,7 @@
-package com.authserver.mainserver.auth.controller;
+package com.authserver.mainserver.register;
 
 import com.authserver.mainserver.type.dto.UserInfoNameForm;
-import com.authserver.mainserver.auth.service.RegisterService;
+import com.authserver.mainserver.register.service.RegisterService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.authserver.mainserver.auth.service;
+package com.authserver.mainserver.register.service;
 
 import com.authserver.mainserver.api.db.DBWebClientService;
 import com.authserver.mainserver.type.dto.UserInfoNameForm;
