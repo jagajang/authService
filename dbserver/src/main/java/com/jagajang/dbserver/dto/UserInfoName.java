@@ -3,10 +3,10 @@ package com.jagajang.dbserver.dto;
 import lombok.Getter;
 
 @Getter
-public class UserRegister extends UserInfo {
+public class UserInfoName extends UserInfo {
     private String nickname;
 
-    public UserRegister(
+    public UserInfoName(
             String email,
             String password,
             String nickname) {

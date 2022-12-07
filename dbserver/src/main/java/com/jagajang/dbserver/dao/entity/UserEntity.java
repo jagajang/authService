@@ -1,5 +1,6 @@
-package com.jagajang.dbserver.entity;
+package com.jagajang.dbserver.dao.entity;
 
+import com.jagajang.dbserver.dto.UserInfoName;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -7,7 +8,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Getter
-@Table(name = "users", indexes = {
+@Table(name = "user", indexes = {
         @Index(name = "idx_email", columnList = "email"),
         @Index(name = "idx_role_email", columnList = "role, email"),
         @Index(name = "idx_nickname", columnList = "nickname")
@@ -32,7 +33,7 @@ public class UserEntity {
     private String password;
 
     @Column(nullable = false, length = 5)
-    private String role;
+    private UserRole role;
 
     @Column(nullable = false, length = 20)
     private String nickname;
@@ -41,15 +42,16 @@ public class UserEntity {
     @Setter
     private Timestamp lastLogin;
 
-    @Builder
-    public UserEntity(
-            String email,
-            String password,
-            String role,
-            String nickname) {
-        this.email = email;
-        this.password = password;
-        this.role = role;
-        this.nickname = nickname;
+    public UserEntity(UserInfoName userInfoName) {
+        this.email = userInfoName.getEmail();
+        this.password = userInfoName.getPassword();
+        this.role = UserRole.USER;
+        this.nickname = userInfoName.getNickname();
+        this.lastLogin = null;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("");
     }
 }

@@ -1,7 +1,7 @@
 package com.jagajang.dbserver;
 
 import com.jagajang.dbserver.dto.UserInfo;
-import com.jagajang.dbserver.dto.UserRegister;
+import com.jagajang.dbserver.dto.UserInfoName;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +11,21 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Slf4j
 public class RegisterController {
+    @Autowired
+    private DBService dbService;
+
+    @GetMapping("/register")
+    public String registerTest() {
+        dbService.registerUser(new UserInfoName(
+                "newUser",
+                "pass",
+                "name"));
+
+        return "";
+    }
+
     @PostMapping("/register")
-    public Boolean registerUser(UserRegister registerInfo) {
+    public Boolean registerUser(UserInfoName registerInfo) {
         log.info(registerInfo.getEmail());
         log.info(registerInfo.getPassword());
         log.info(registerInfo.getNickname());
