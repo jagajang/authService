@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Getter
+@Builder
 @Table(name = "user", indexes = {
         @Index(name = "idx_email", columnList = "email"),
         @Index(name = "idx_role_email", columnList = "role, email"),

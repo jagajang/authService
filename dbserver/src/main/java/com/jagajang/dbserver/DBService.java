@@ -20,4 +20,8 @@ public class DBService {
         log.info(userRepository.findByEmail(userInfoName.getEmail()).getNickname());
         return true;
     }
+
+    public Boolean findUserByNickname(String userName) {
+        return false;
+    }
 }

@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class UserMailPassName extends UserMailPass {
-    private String nickname;
+    private final String nickname;
 
     public UserMailPassName(
             String email,
