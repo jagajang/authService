@@ -20,8 +20,4 @@ public class DBService {
         log.info(userRepository.findByEmail(userInfoName.getEmail()).getNickname());
         return true;
     }
-
-    /*public UserInfoName userInfo(String email) {
-        return userRepository.findByEmail(email);
-    }*/
 }

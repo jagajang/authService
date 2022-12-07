@@ -1,5 +1,6 @@
-package com.jagajang.dbserver;
+package com.jagajang.dbserver.Controller;
 
+import com.jagajang.dbserver.DBService;
 import com.jagajang.dbserver.type.dto.UserInfoName;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
