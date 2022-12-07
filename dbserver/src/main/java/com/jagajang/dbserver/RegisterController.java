@@ -1,7 +1,7 @@
 package com.jagajang.dbserver;
 
-import com.jagajang.dbserver.dto.UserInfo;
-import com.jagajang.dbserver.dto.UserInfoName;
+import com.jagajang.dbserver.type.dto.UserInfo;
+import com.jagajang.dbserver.type.dto.UserInfoName;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +29,8 @@ public class RegisterController {
         log.info(registerInfo.getEmail());
         log.info(registerInfo.getPassword());
         log.info(registerInfo.getNickname());
-        return false;
+
+        return dbService.registerUser(registerInfo);
     }
 
     @PostMapping("/is-admin")

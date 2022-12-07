@@ -1,4 +1,4 @@
-package com.jagajang.dbserver.dto;
+package com.jagajang.dbserver.type.dto;
 
 import lombok.Getter;
 

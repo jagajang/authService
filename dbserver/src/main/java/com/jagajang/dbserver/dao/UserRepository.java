@@ -1,6 +1,5 @@
 package com.jagajang.dbserver.dao;
 
-import com.jagajang.dbserver.dto.UserInfoName;
 import com.jagajang.dbserver.dao.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

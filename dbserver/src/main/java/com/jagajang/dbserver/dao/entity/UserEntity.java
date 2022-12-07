@@ -1,6 +1,7 @@
 package com.jagajang.dbserver.dao.entity;
 
-import com.jagajang.dbserver.dto.UserInfoName;
+import com.jagajang.dbserver.type.dto.UserInfoName;
+import com.jagajang.dbserver.type.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 
