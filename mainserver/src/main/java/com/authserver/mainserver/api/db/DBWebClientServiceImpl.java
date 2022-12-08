@@ -40,6 +40,7 @@ public class DBWebClientServiceImpl implements DBWebClientService {
                 .build();
     }
 
+    @Override
     public String apiTest() {
         String uri = "/api-test";
 
