@@ -1,4 +1,4 @@
-package com.jagajang.dbserver.Controller;
+package com.jagajang.dbserver.controller;
 
 import com.jagajang.dbserver.DBService;
 import com.jagajang.dbserver.type.dto.UserMailPassName;
