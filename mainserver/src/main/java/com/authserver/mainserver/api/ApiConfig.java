@@ -40,6 +40,8 @@ public class ApiConfig {
                 .build();
     }
 
+    //@Bean
+    //@Scope("prototype")
     private HttpClient httpClientBuilder() {
         return HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 2000)
