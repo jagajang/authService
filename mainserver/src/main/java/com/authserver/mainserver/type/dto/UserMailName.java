@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class UserInfoForm {
+public class UserMailName {
     private String email;
-    private String password;
+    private String nickname;
 }
