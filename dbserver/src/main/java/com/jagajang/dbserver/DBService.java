@@ -19,10 +19,11 @@ public class DBService {
     private UserRepository userRepository;
 
     public Boolean registerUser(UserMailPassName userInfoName) {
-        if(userRepository.existsByEmail(userInfoName.getEmail()))
+        if(userRepository.existsByEmail(userInfoName.getEmail())) {
             return false;
+        }
+
         userRepository.save(new UserEntity(userInfoName));
-        log.info(userRepository.findByEmail(userInfoName.getEmail()).getNickname());
         return true;
     }
 
