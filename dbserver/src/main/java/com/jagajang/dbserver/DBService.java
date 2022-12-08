@@ -2,14 +2,15 @@ package com.jagajang.dbserver;
 
 import com.jagajang.dbserver.dao.UserRepository;
 import com.jagajang.dbserver.dao.entity.UserEntity;
+import com.jagajang.dbserver.type.dto.UserMailPass;
 import com.jagajang.dbserver.type.dto.UserMailPassName;
 import com.jagajang.dbserver.type.dto.UserResponseInfo;
+import com.jagajang.dbserver.type.enums.UserRole;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -35,5 +36,16 @@ public class DBService {
                                 .lastLogin(userEntity.getLastLogin())
                                 .build()
                 ).toList();
+    }
+
+    public UserRole validUser(UserMailPass userInfo) {
+        UserEntity foundUser = userRepository.findByEmail(userInfo.getEmail());
+
+        if(foundUser != null
+                && userInfo.getPassword() == foundUser.getPassword()) {
+            return foundUser.getRole();
+        }
+
+        return UserRole.GUEST;
     }
 }
