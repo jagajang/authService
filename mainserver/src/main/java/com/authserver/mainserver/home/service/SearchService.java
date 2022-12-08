@@ -13,11 +13,10 @@ public class SearchService {
     DBWebClientService dbWebClientService;
 
     public List<UserMailName> searchUsersWithEmail(String email) {
-        return null;
+        return dbWebClientService.searchUserWithEmail(email);
     }
 
     public List<UserMailName> searchUsersWithNickname(String nickname) {
-        dbWebClientService.searchUser(nickname);
-        return null;
+        return dbWebClientService.searchUserWithNickname(nickname);
     }
 }
